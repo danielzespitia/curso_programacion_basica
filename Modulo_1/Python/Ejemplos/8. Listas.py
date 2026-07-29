@@ -3,32 +3,30 @@
 # Ejemplo de uso de listas en Python
 
 # Definición de una lista
-mi_lista = [1, 2, 3, 4, 5]  
+mi_lista = [1.1, 2, 3, 4, 5, "seis", True, [7, 8, 9]]  # Lista con diferentes tipos de datos, incluyendo otra lista anidada
 # Imprimir la lista
 print("Lista original:", mi_lista)  
 print(f"Lista original: {mi_lista}")
 
 # Acceso a elementos de la lista
-print("Primer elemento:", mi_lista[0])  # Acceso al primer elemento (índice 0)
-print("Último elemento:", mi_lista[-1])  # Acceso al último elemento (índice -1)    
+print(f"Primer elemento: {mi_lista[0]}")  # Acceso al primer elemento (índice 0)
+print(f"Último elemento: {mi_lista[-1]}")  # Acceso al último elemento (índice -1)    
 
 # Modificación de un elemento de la lista
 mi_lista[2] = 10  # Cambia el tercer elemento (índice    2) a 10
 print("Lista después de modificar el tercer elemento:", mi_lista)   
 
 # Añadir elementos a la lista
-mi_lista.append(6)  # Añade el número 6 al final de la lista
+mi_lista.append(122)  # Añade el número 6 al final de la lista
 print("Lista después de añadir un elemento:", mi_lista)
 
 # Insertar un elemento en una posición específica
 mi_lista.insert(1, 7)  # Inserta el número 7 en la posición 1
 print("Lista después de insertar un elemento en la posición 1:", mi_lista)  
 
-# Eliminar elementos de la lista
-mi_lista.remove(4)  # Elimina el primer elemento con valor 4
-print("Lista después de eliminar el número 4:", mi_lista)
-
 # Eliminar un elemento por su índice
+mi_lista.pop(3)  # Elimina el elemento en la posición 3 (índice 3)
+mi_lista.remove(5)  # Elimina el número 5 de la lista
 del mi_lista[0]  # Elimina el primer elemento (índice 0)    
 print("Lista después de eliminar el primer elemento:", mi_lista)
 

@@ -3,27 +3,10 @@
 // ==========================================================================================
 public class EjemploFunciones
 {
-    public static void ExplicarFunciones()
+    public static void Main()
     {
         Console.WriteLine("\n\n--- 5. Funciones (o Métodos) ---");
 
-        /*
-         * CONCEPTO DE FUNCIÓN/MÉTODO:
-         * Una función (en C#, comúnmente llamada "método" cuando está dentro de una clase)
-         * es un bloque de código que realiza una tarea específica.
-         * Permiten reutilizar código, organizar la lógica del programa y hacerlo más legible.
-         *
-         * Una función tiene una "firma" que define:
-         * 1. Modificador de acceso (ej. 'public', 'private'): Quién puede llamarla.
-         * 2. Tipo de retorno: El tipo de dato del valor que la función devuelve. Si no
-         * devuelve nada, se usa la palabra clave 'void'.
-         * 3. Nombre: Un nombre descriptivo para la función.
-         * 4. Parámetros (opcional): Variables que la función recibe para trabajar con ellas.
-        */
-
-        // --- LLAMANDO A LAS FUNCIONES DE EJEMPLO ---
-
-        // Llamada a una función que no devuelve nada ('void').
         SaludarUsuario("Maria");
 
         // Llamada a una función que devuelve un valor ('int').

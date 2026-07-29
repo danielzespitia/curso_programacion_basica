@@ -24,7 +24,7 @@ inline int duplicar(int x);
 void saludar()
 {
     string mensaje = "¡Hola desde la funcion 'saludar'!";
-    cout << "   " << mensaje << endl;
+    cout << "   " << endl;
     cout << "   Acceso a la variable global desde 'saludar': \"" << variableGlobal << "\"" << endl;
 }
 

@@ -46,8 +46,7 @@ namespace FundamentosDeCSharp
             int hora = 14;
             Console.WriteLine($"Si la hora actual es {hora}:");
 
-            if (hora < 12)
-            {
+            if (hora < 12){
                 Console.WriteLine("¡Buenos días!");
             }
             else if (hora < 18)
@@ -135,8 +134,7 @@ namespace FundamentosDeCSharp
             */
             Console.WriteLine("\n--- Ejemplo de bucle while ---");
             int contadorWhile = 0;
-            while (contadorWhile < 3)
-            {
+            while (contadorWhile < 3){
                 Console.WriteLine("El contador 'while' está en: " + contadorWhile);
                 contadorWhile++; // Es crucial modificar la variable de la condición dentro del bucle para evitar un bucle infinito.
             }
@@ -148,12 +146,14 @@ namespace FundamentosDeCSharp
              * evalúa DESPUÉS de la primera iteración.
             */
             Console.WriteLine("\n--- Ejemplo de bucle do-while ---");
+
             int contadorDo = 5;
-            do
-            {
+            do{
                 Console.WriteLine("El contador 'do-while' se ejecuta al menos una vez. Valor: " + contadorDo);
                 contadorDo++;
-            } while (contadorDo < 3); // La condición (5 < 3) es falsa, pero el bloque ya se ejecutó una vez.
+            }
+            while (contadorDo < 3); 
+            // La condición (5 < 3) es falsa, pero el bloque ya se ejecutó una vez.
         }
     }
 }

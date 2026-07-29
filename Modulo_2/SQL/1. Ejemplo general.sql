@@ -146,7 +146,8 @@ ya que especifica explícitamente dónde va cada valor.
 -- (Primero, volvemos a añadir la columna 'age' que borramos antes para que los inserts funcionen)
 ALTER TABLE Customers ADD COLUMN age INT;
 
-INSERT INTO Customers (customer_id, first_name, last_name, age, country, email) 
+INSERT INTO Customers 
+(customer_id, first_name, last_name, age, country, email) 
 
 VALUES
 (1, 'Juan', 'Perez', 28, 'Mexico', 'juan.perez@email.com'),
@@ -400,40 +401,3 @@ La consulta interna se ejecuta primero, y su resultado es utilizado por la consu
 SELECT first_name, last_name
 FROM Customers
 WHERE customer_id IN (SELECT customer_id FROM Orders WHERE item = 'Laptop');
-
-
--- ###################################################################################
--- # MÓDULO 7: SQL INTERMEDIO - ÍNDICES Y CLAVES FORÁNEAS                            #
--- ###################################################################################
-
--- =================================================================================
--- ÍNDICES (INDEXES)
--- =================================================================================
-/*
-Un índice es una estructura de datos que mejora la velocidad de las operaciones de recuperación de datos en una tabla.
-Piensa en el índice de un libro: en lugar de leer todo el libro para encontrar un tema, vas al índice, que te dice la página exacta.
-Los índices en SQL funcionan de manera similar. Se crean en una o más columnas.
-Son especialmente útiles en columnas que se usan frecuentemente en cláusulas `WHERE` y en `JOINs`.
-*/
-
--- Crear un índice en la columna `customer_id` de la tabla `Orders` acelerará las uniones con la tabla `Customers`.
-CREATE INDEX idx_orders_customer_id ON Orders (customer_id);
-
-
--- =================================================================================
--- CLAVES FORÁNEAS (FOREIGN KEYS)
--- =================================================================================
-/*
-Una clave foránea es una clave utilizada para vincular dos tablas. Es un campo (o colección de campos) en una tabla
-que se refiere a la `PRIMARY KEY` en otra tabla.
-Su principal propósito es garantizar la **integridad referencial** de los datos. Esto significa que:
-- No puedes crear un pedido para un `customer_id` que no existe en la tabla `Customers`.
-- No puedes eliminar un cliente si este tiene pedidos asociados (a menos que se configure de otra manera).
-*/
-
--- Añadimos una restricción de clave foránea a la tabla `Orders`.
-ALTER TABLE Orders
-ADD CONSTRAINT fk_orders_customers
-FOREIGN KEY (customer_id) REFERENCES Customers(customer_id);
-
--- FIN DEL CURSO --

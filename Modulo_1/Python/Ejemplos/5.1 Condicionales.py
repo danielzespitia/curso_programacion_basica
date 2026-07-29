@@ -1,51 +1,59 @@
-edad = int(input("¿Cuál es tu edad? "))
+edad = int(input("Cual es tu edad? ")) 
 
-print(f"\nBienvenido al programa, tu edad es {edad} años.")
 
 # Nivel 1
-
 if edad == 18:
-    print("¡Felicidades! Acabas de alcanzar la mayoría de edad.")
+    print("Tienes 18 años")
     
-    apertura_cuenta = input("\n¿Deseas abrir una cuenta bancaria? (si/no) ").lower()
+    #Nivel 2
+    bancaria = input("Tienes cuenta bancaria? (si/no) ").lower()
     
-    # Nivel 2
-    if apertura_cuenta == "si":
-        print("¡Cuenta bancaria abierta exitosamente!")
+    if (bancaria == "si" or bancaria == "yes") or (bancaria == "s" or bancaria == "y"):
+        print("Que bueno que ya tengas cuenta bancaria")
         
-        banco = input("\n¿En qué banco deseas abrir tu cuenta? ").upper()
+        #Nivel 3
+        banco = input("Cual es tu banco? ").lower()
         
-        # Nivel 3
-        if (banco == "BANCO MERCANTIL" or banco == "MERCANTIL") or (banco == "BANCO MERCANTIL VENEZUELA" or banco == "MERCANTIL VENEZUELA"):
-            print("Has elegido Banco Mercantil, excelente elección.")
+        if banco == "banesco":
+            print("Que feo ese banco es para pura pobre que aparenta")
+        elif banco == "mercantil":
+            print("Mercantil es un buen banco pero no tiene TDC")
+        elif banco == "provincial":
+            print("Provincial es un buen banco pero es un fastidio")
+        elif banco == "bnc":
+            print("BNC es un MAL banco")
+        elif banco == "bancamiga":
+            print("Bancamiga es un REGULAR banco")
+        elif banco == "bancaribe":
+            print("Bancaribe es el mejor banco de Venezuela")
             
-            
-        elif banco == "BANCO PROVINCIAL":
-            print("Has elegido Banco Provincial, excelente elección.")
-            
-        elif banco == "BANESCO":
-            print("Has elegido Banesco, excelente elección.")
-            
-        elif banco == "BANCO DEL CARIBE" or banco == "BANCARIBE":
-            print("Has elegido Banco del Caribe, excelente elección.")
-            
-        else:
-            print("Banco no reconocido, por favor elige una opción válida.")
-        
-    elif apertura_cuenta == "no":
-        print("Entendido, no se abrirá una cuenta bancaria.")
-    
     else:
-        print("Respuesta no válida.")
-
-elif edad > 18 and edad < 60:
-    print("Eres mayor de edad.")
-
-elif edad >= 60 and edad <= 100:
-    print("Eres un adulto mayor.")
+        print("Deberias abrir una cuenta bancaria")
     
-elif edad < 18 and edad >= 0:
-    print("Eres menor de edad.")
     
-else:
-    print("Error.")
+    
+    
+    
+    
+    
+    
+elif edad < 18 and edad > 0: #1-17
+    print("Eres menor de edad")
+    
+elif edad > 18 and edad < 65: #19-64
+    print("Eres mayor de edad")
+    
+elif edad >= 65 and edad < 100: #65-99
+    print("Eres adulto mayor")
+    
+elif edad >= 100: #100 o mas
+    print("Estas muerto compadre")
+    
+elif edad == 0: #0
+    print("Recien nacido")
+    
+elif edad < 0: #negativos
+    print("Edad no valida")
+    
+else: 
+    print("Entrada no valida")

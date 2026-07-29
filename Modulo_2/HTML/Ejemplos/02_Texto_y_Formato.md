@@ -6,7 +6,7 @@ Estas etiquetas se utilizan para estructurar y dar significado al texto dentro d
 
 ## 1. `<h1>` a `<h6>` (Encabezados)
 
-**Descripción:**  
+**Descripción:**
 Representan seis niveles de encabezados de sección. `<h1>` es el más importante y `<h6>` el menos importante.
 
 **Reglas de Oro:**
@@ -27,7 +27,7 @@ Representan seis niveles de encabezados de sección. `<h1>` es el más important
 
 ## 2. `<p>` (Párrafo)
 
-**Descripción:**  
+**Descripción:**
 Define un párrafo de texto. Los navegadores añaden automáticamente un margen antes y después de cada elemento `<p>`.
 
 **Ejemplo:**
@@ -41,7 +41,7 @@ Define un párrafo de texto. Los navegadores añaden automáticamente un margen 
 
 ## 3. `<span>`
 
-**Descripción:**  
+**Descripción:**
 Es un contenedor en línea (inline) genérico. A diferencia de `<div>`, no inicia una nueva línea. Se usa principalmente para aplicar estilos CSS o manipular texto con JavaScript en partes pequeñas de un párrafo.
 
 **Ejemplo:**
@@ -54,10 +54,10 @@ Es un contenedor en línea (inline) genérico. A diferencia de `<div>`, no inici
 
 ## 4. `<br>` (Salto de Línea)
 
-**Descripción:**  
+**Descripción:**
 Produce un salto de línea (line break) dentro del texto. Es una etiqueta vacía.
 
-**Cuándo usarla:**  
+**Cuándo usarla:**
 Para poemas o direcciones postales. **NO** la uses para crear espacio entre párrafos (usa márgenes CSS para eso).
 
 **Ejemplo:**
@@ -74,7 +74,7 @@ Para poemas o direcciones postales. **NO** la uses para crear espacio entre pár
 
 ## 5. `<hr>` (Cambio Temático)
 
-**Descripción:**  
+**Descripción:**
 Originalmente "Horizontal Rule" (línea horizontal). En HTML5 representa un cambio temático entre párrafos (como un cambio de escena en una historia). Visualmente se renderiza como una línea horizontal.
 
 **Ejemplo:**
@@ -89,10 +89,10 @@ Originalmente "Horizontal Rule" (línea horizontal). En HTML5 representa un camb
 
 ## 6. `<strong>` (Importancia Fuerte)
 
-**Descripción:**  
+**Descripción:**
 Indica que el texto tiene gran importancia, seriedad o urgencia. Visualmente, los navegadores lo muestran en **negrita**.
 
-**Diferencia con `<b>`:**  
+**Diferencia con `<b>`:**
 `<b>` solo hace el texto negrita visualmente. `<strong>` aporta significado semántico (importante para lectores de pantalla).
 
 **Ejemplo:**
@@ -105,10 +105,10 @@ Indica que el texto tiene gran importancia, seriedad o urgencia. Visualmente, lo
 
 ## 7. `<em>` (Énfasis)
 
-**Descripción:**  
+**Descripción:**
 Indica énfasis en el texto (como cuando cambias el tono de voz). Visualmente se muestra en _cursiva_.
 
-**Diferencia con `<i>`:**  
+**Diferencia con `<i>`:**
 `<i>` es para texto en una voz diferente (términos técnicos, pensamientos), `<em>` es para énfasis.
 
 **Ejemplo:**
@@ -121,10 +121,10 @@ Indica énfasis en el texto (como cuando cambias el tono de voz). Visualmente se
 
 ## 8. `<blockquote>`
 
-**Descripción:**  
+**Descripción:**
 Indica que una sección de texto es una cita de otra fuente. Los navegadores suelen sangrar (indentar) este contenido.
 
-**Atributo `cite`:**  
+**Atributo `cite`:**
 URL de la fuente de la cita.
 
 **Ejemplo:**
@@ -140,14 +140,15 @@ URL de la fuente de la cita.
 
 ## 9. `<pre>` (Texto Preformateado)
 
-**Descripción:**  
+**Descripción:**
 Muestra el texto exactamente como está escrito en el archivo HTML, respetando espacios y saltos de línea. Usa una fuente monoespaciada.
 
 **Ejemplo:**
 
 ```html
 <pre>
-  Este texto    mantiene
+  Este texto    mantiene 
+
       sus espacios
   y saltos.
 </pre>
@@ -157,7 +158,7 @@ Muestra el texto exactamente como está escrito en el archivo HTML, respetando e
 
 ## 10. `<code>`
 
-**Descripción:**  
+**Descripción:**
 Define un fragmento de código de computadora. Para bloques de código grandes, se suele combinar con `<pre>`.
 
 **Ejemplo:**

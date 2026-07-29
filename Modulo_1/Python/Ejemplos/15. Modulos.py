@@ -3,6 +3,7 @@
 
 # Ejemplo de uso de módulos en Python
 import math  # Importa el módulo math para usar funciones matemáticas   
+
 def calcular_raiz_cuadrada(numero):
     """Función que calcula la raíz cuadrada de un número."""
     return math.sqrt(numero)  # Usa la función sqrt del módulo math para calcular la raíz cuadrada

@@ -1,8 +1,3 @@
-# Output: ¡Hola, Mundo!
-print("¡Hola, Mundo!")
+nombre = input("Cual es tu nombre: ")
 
-# Input: Entrada de datos por parte del usuario
-edad = input("Introduce tu edad: ")
-
-# Imprimir el input del usuario
-print("Tienes " + edad + " años.")
+print(f"Me llamo {nombre}")

@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
+
 /* Reset básico para ver mejor el ejemplo */
 * {
     box-sizing: border-box; /* Recomendado: incluye padding y border en el ancho total */
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Gruppo';
     padding: 20px;
 }
 

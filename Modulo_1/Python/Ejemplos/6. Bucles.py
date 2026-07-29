@@ -29,7 +29,7 @@ for letra in nombre:
 # For con listas
 numeros = [1, 2, 3, 4, 5]
 for numero in numeros:
-    print(numero)
+    print(f"{numero+1}")
    
 # For con tuplas
 tupla = (1, 2, 3, 4, 5)
@@ -65,7 +65,7 @@ O sea no sabemos cuantas veces se va a ejecutar el bloque de código."""
 contador = 0
 while contador < 5:
     print(f"Numero: {contador}")
-    contador += 1 # Incrementamos el contador para evitar un bucle infinito
+     # Incrementamos el contador para evitar un bucle infinito
   
 # While con variables
 nombre = "Python"

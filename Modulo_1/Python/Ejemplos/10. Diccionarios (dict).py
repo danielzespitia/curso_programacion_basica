@@ -5,6 +5,7 @@
 
 # Definición de un diccionario
 mi_diccionario = {
+    #Clave : Valor
     "nombre": "Juan",
     "edad": 30,
     "ciudad": "Madrid",
