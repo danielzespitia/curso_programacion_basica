@@ -5,7 +5,7 @@
 Configura tu identidad para que los commits lleven tu nombre.
 
 ```bash
-git config --global user.name "Usuario"
+git config --global user.name "danielzespitia"
 git config --global user.email "Correo"
 ```
 
