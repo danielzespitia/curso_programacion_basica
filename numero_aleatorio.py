@@ -1,7 +1,7 @@
 import random
 
 while True:
-    numero = random.randint(1, 2)
+    numero = random.randint(1, 6)
     adivina = int(input("Cual es el numero?: "))
     
     if adivina == numero:

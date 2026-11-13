@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examen HTML & CSS – Módulo 2 | Curso de Programación Básica</title>
+  <meta name="description" content="Examen práctico de HTML y CSS con 10 ejercicios progresivos para el Módulo 2 del Curso de Programación Básica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0d1117; --surface:#161b22; --surface2:#1e2530; --border:#30363d;
+      --text:#e6edf3; --muted:#7d8590; --accent:#58a6ff; --green:#3fb950;
+      --purple:#a371f7; --orange:#f78166; --yellow:#e3b341;
+      --gradient:linear-gradient(135deg,#58a6ff 0%,#a371f7 100%);
+      --radius:14px; --shadow:0 8px 32px rgba(0,0,0,.45);
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; min-height:100vh; }
+    ::-webkit-scrollbar{width:8px} ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+    ::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+
+    .hero { position:relative; overflow:hidden; padding:70px 24px 60px; text-align:center; background:var(--surface); border-bottom:1px solid var(--border); }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 60% at 50% -20%,rgba(88,166,255,.18) 0%,transparent 70%); pointer-events:none; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(88,166,255,.12); border:1px solid rgba(88,166,255,.3); color:var(--accent); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:6px 16px; border-radius:999px; margin-bottom:20px; }
+    .hero h1 { font-size:clamp(2rem,5vw,3.4rem); font-weight:800; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.2; margin-bottom:16px; }
+    .hero p { font-size:1.1rem; color:var(--muted); max-width:560px; margin:0 auto 32px; }
+    .progress-bar { display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; }
+    .prog-dot { width:32px; height:32px; border-radius:50%; background:var(--surface2); border:2px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:700; color:var(--muted); cursor:pointer; transition:all .25s; text-decoration:none; }
+    .prog-dot:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-3px); }
+
+    main { max-width:860px; margin:0 auto; padding:48px 24px 80px; display:flex; flex-direction:column; gap:32px; }
+
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); transition:transform .25s,box-shadow .25s; opacity:0; animation:fadeUp .5s ease forwards; }
+    .card:hover { transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.55); }
+    .card::before { content:''; display:block; height:4px; }
+    .card:nth-child(1)::before  { background:linear-gradient(90deg,#58a6ff,#79c0ff); }
+    .card:nth-child(2)::before  { background:linear-gradient(90deg,#3fb950,#56d364); }
+    .card:nth-child(3)::before  { background:linear-gradient(90deg,#f78166,#ffa198); }
+    .card:nth-child(4)::before  { background:linear-gradient(90deg,#a371f7,#c084fc); }
+    .card:nth-child(5)::before  { background:linear-gradient(90deg,#e3b341,#f2cc60); }
+    .card:nth-child(6)::before  { background:linear-gradient(90deg,#58a6ff,#a371f7); }
+    .card:nth-child(7)::before  { background:linear-gradient(90deg,#3fb950,#a371f7); }
+    .card:nth-child(8)::before  { background:linear-gradient(90deg,#f78166,#e3b341); }
+    .card:nth-child(9)::before  { background:linear-gradient(90deg,#58a6ff,#3fb950); }
+    .card:nth-child(10)::before { background:var(--gradient); }
+    .card:nth-child(1){animation-delay:.05s} .card:nth-child(2){animation-delay:.10s}
+    .card:nth-child(3){animation-delay:.15s} .card:nth-child(4){animation-delay:.20s}
+    .card:nth-child(5){animation-delay:.25s} .card:nth-child(6){animation-delay:.30s}
+    .card:nth-child(7){animation-delay:.35s} .card:nth-child(8){animation-delay:.40s}
+    .card:nth-child(9){animation-delay:.45s} .card:nth-child(10){animation-delay:.50s}
+
+    .card-header { padding:24px 28px 18px; display:flex; align-items:flex-start; gap:18px; }
+    .exercise-number { flex-shrink:0; width:46px; height:46px; border-radius:12px; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:800; color:var(--accent); }
+    .card-header-text h2 { font-size:1.15rem; font-weight:700; color:var(--text); margin-bottom:4px; }
+    .goal-badge { display:inline-flex; align-items:center; gap:6px; font-size:.82rem; color:var(--muted); }
+    .card-body { padding:0 28px 26px; }
+    .objective { background:var(--surface2); border-left:3px solid var(--accent); border-radius:0 8px 8px 0; padding:12px 16px; margin-bottom:20px; font-size:.9rem; }
+    .req-title { display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); margin-bottom:12px; }
+    .req-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .req-list li { display:flex; align-items:flex-start; gap:10px; font-size:.92rem; color:#c9d1d9; }
+    .req-list li::before { content:''; flex-shrink:0; margin-top:6px; width:7px; height:7px; border-radius:50%; background:var(--accent); }
+    code { font-family:'Fira Code',monospace; font-size:.83em; background:rgba(88,166,255,.1); border:1px solid rgba(88,166,255,.2); color:var(--accent); padding:2px 6px; border-radius:5px; }
+    .css-chip { font-family:'Fira Code',monospace; font-size:.82em; background:rgba(163,113,247,.1); border:1px solid rgba(163,113,247,.25); color:var(--purple); padding:2px 7px; border-radius:5px; }
+    .optional { margin-top:18px; background:rgba(227,179,65,.07); border:1px solid rgba(227,179,65,.2); border-radius:10px; padding:14px 18px; }
+    .optional-label { display:flex; align-items:center; gap:6px; font-size:.8rem; font-weight:700; color:var(--yellow); text-transform:uppercase; letter-spacing:.07em; margin-bottom:8px; }
+    .optional p { font-size:.88rem; color:#c9d1d9; }
+    .card-final .exercise-number { background:var(--gradient); border:none; color:#fff; font-size:1.3rem; }
+
+    footer { text-align:center; padding:32px 24px; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem; }
+    footer strong { color:var(--accent); }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:600px){.card-header{flex-direction:column;gap:12px}}
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-badge">&#128187; Módulo 2 &middot; HTML &amp; CSS</div>
+  <h1>Examen Práctico</h1>
+  <p>Completa los 10 ejercicios a continuación para demostrar tu dominio de HTML y CSS.</p>
+  <nav class="progress-bar" aria-label="Navegar por ejercicio">
+    <a class="prog-dot" href="#ej1">1</a><a class="prog-dot" href="#ej2">2</a>
+    <a class="prog-dot" href="#ej3">3</a><a class="prog-dot" href="#ej4">4</a>
+    <a class="prog-dot" href="#ej5">5</a><a class="prog-dot" href="#ej6">6</a>
+    <a class="prog-dot" href="#ej7">7</a><a class="prog-dot" href="#ej8">8</a>
+    <a class="prog-dot" href="#ej9">9</a><a class="prog-dot" href="#ej10">10</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Ejercicio 1 -->
+  <article class="card" id="ej1">
+    <div class="card-header">
+      <div class="exercise-number">1</div>
+      <div class="card-header-text">
+        <h2>Mi Primera Página Web</h2>
+        <span class="goal-badge">Estructura básica de HTML</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Familiarizarse con la estructura básica de un archivo HTML y el uso de las etiquetas más fundamentales.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear un nuevo archivo llamado <code>ejercicio1.html</code>.</li>
+        <li>Escribir la estructura HTML completa: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>.</li>
+        <li>Dentro del <code>&lt;head&gt;</code>, añadir <code>&lt;title&gt;</code> que diga <strong>"Mi Primer Ejercicio"</strong>.</li>
+        <li>Dentro del <code>&lt;body&gt;</code>, añadir <code>&lt;h1&gt;</code> que diga <strong>"Hola, Mundo!"</strong>.</li>
+        <li>Debajo del <code>&lt;h1&gt;</code>, añadir <code>&lt;p&gt;</code> que diga <strong>"Estoy aprendiendo HTML y es increíble."</strong></li>
+        <li>Abrir el archivo en el navegador para ver el resultado.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Ejercicio 2 -->
+  <article class="card" id="ej2">
+    <div class="card-header">
+      <div class="exercise-number">2</div>
+      <div class="card-header-text">
+        <h2>Listas y Enlaces</h2>
+        <span class="goal-badge">Hipervínculos y listas</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Practicar la creación de listas y cómo convertir texto en hipervínculos.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear un nuevo archivo <code>ejercicio2.html</code>.</li>
+        <li>Añadir <code>&lt;h2&gt;</code> que diga <strong>"Mis Sitios Web Favoritos"</strong>.</li>
+        <li>Crear una lista desordenada <code>&lt;ul&gt;</code> con tres <code>&lt;li&gt;</code>.</li>
+        <li>Cada elemento debe tener un enlace <code>&lt;a&gt;</code> a un sitio diferente (Google, YouTube, Wikipedia).</li>
+      </ul>
+      <div class="optional">
+        <div class="optional-label">✨ Extra Opcional</div>
+        <p>Añade una segunda lista ordenada <code>&lt;ol&gt;</code> con los pasos que sigues para estudiar.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ejercicio 3 -->
+  <article class="card" id="ej3">
+    <div class="card-header">
+      <div class="exercise-number">3</div>
+      <div class="card-header-text">
+        <h2>Agregando una Imagen</h2>
+        <span class="goal-badge">Insertar imágenes</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Aprender a insertar imágenes locales y externas en una página.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear un archivo <code>ejercicio3.html</code>.</li>
+        <li>Añadir un <code>&lt;h1&gt;</code> que diga <strong>"Mi Animal Favorito"</strong>.</li>
+        <li>Buscar una imagen de tu animal favorito en internet.</li>
+        <li>Insertar la imagen con <code>&lt;img src="URL" alt="descripción"&gt;</code>.</li>
+        <li>Añadir un texto alternativo descriptivo en el atributo <code>alt</code>.</li>
+      </ul>
+      <div class="optional">
+        <div class="optional-label">✨ Extra Opcional</div>
+        <p>Debajo de la imagen, añade un <code>&lt;p&gt;</code> que dé crédito a la fuente con un enlace.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ejercicio 4 -->
+  <article class="card" id="ej4">
+    <div class="card-header">
+      <div class="exercise-number">4</div>
+      <div class="card-header-text">
+        <h2>Mi Primera Hoja de Estilos</h2>
+        <span class="goal-badge">Vincular CSS externo</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Conectar por primera vez un archivo CSS a un HTML y aplicar estilos básicos.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio4.html</code> y <code>estilo4.css</code>.</li>
+        <li>En el HTML: estructura básica con <code>&lt;h1&gt;</code> y dos párrafos <code>&lt;p&gt;</code>.</li>
+        <li>Enlazar la hoja de estilos desde el <code>&lt;head&gt;</code> con <code>&lt;link&gt;</code>.</li>
+        <li>En el CSS — <code>body</code>: <span class="css-chip">background-color: #f0f0f0</span></li>
+        <li>En el CSS — <code>h1</code>: <span class="css-chip">color: navy</span></li>
+        <li>En el CSS — <code>p</code>: <span class="css-chip">font-size: 18px</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Ejercicio 5 -->
+  <article class="card" id="ej5">
+    <div class="card-header">
+      <div class="exercise-number">5</div>
+      <div class="card-header-text">
+        <h2>Usando Clases y IDs</h2>
+        <span class="goal-badge">Selectores CSS</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Entender la diferencia entre estilos generales, clases e IDs.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio5.html</code> y <code>estilo5.css</code>.</li>
+        <li>En el HTML: un <code>&lt;h1&gt;</code> y tres párrafos.</li>
+        <li>Al primer párrafo: <code>class="destacado"</code>.</li>
+        <li>Al tercer párrafo: <code>id="resumen"</code>.</li>
+        <li>CSS — <code>.destacado</code>: <span class="css-chip">background: yellow</span> + <span class="css-chip">font-weight: bold</span></li>
+        <li>CSS — <code>#resumen</code>: <span class="css-chip">font-style: italic</span> + color diferente</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Ejercicio 6 -->
+  <article class="card" id="ej6">
+    <div class="card-header">
+      <div class="exercise-number">6</div>
+      <div class="card-header-text">
+        <h2>El Modelo de Caja (Box Model)</h2>
+        <span class="goal-badge">padding · border · margin</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Practicar con <code>padding</code>, <code>border</code> y <code>margin</code>.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio6.html</code> y <code>estilo6.css</code>.</li>
+        <li>En el HTML: <code>&lt;div class="caja"&gt;</code> con un <code>&lt;h2&gt;</code> y un <code>&lt;p&gt;</code>.</li>
+        <li>CSS — <code>.caja</code>: <span class="css-chip">width: 400px</span></li>
+        <li><span class="css-chip">background-color: #eaf2f8</span></li>
+        <li><span class="css-chip">border: 2px solid #3498db</span></li>
+        <li><span class="css-chip">padding: 20px</span> &nbsp;+&nbsp; <span class="css-chip">margin: 30px</span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Ejercicio 7 -->
+  <article class="card" id="ej7">
+    <div class="card-header">
+      <div class="exercise-number">7</div>
+      <div class="card-header-text">
+        <h2>Tarjeta de Presentación Simple</h2>
+        <span class="goal-badge">Componente visual</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Combinar HTML y CSS para crear un componente visual común.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio7.html</code> y <code>estilo7.css</code>.</li>
+        <li>HTML: <code>&lt;div class="tarjeta"&gt;</code> con: <code>&lt;img&gt;</code>, <code>&lt;h2&gt;</code> (nombre), <code>&lt;p&gt;</code> (cargo).</li>
+        <li>Puedes usar <code>https://via.placeholder.com/150</code> como imagen de prueba.</li>
+        <li>CSS <code>.tarjeta</code>: borde, color de fondo, <span class="css-chip">box-shadow</span>, ancho fijo y <span class="css-chip">border-radius</span>.</li>
+        <li>Contenido centrado con <span class="css-chip">text-align: center</span>.</li>
+      </ul>
+      <div class="optional">
+        <div class="optional-label">✨ Extra Opcional</div>
+        <p>Haz la imagen de perfil redonda: <span class="css-chip">border-radius: 50%</span>.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ejercicio 8 -->
+  <article class="card" id="ej8">
+    <div class="card-header">
+      <div class="exercise-number">8</div>
+      <div class="card-header-text">
+        <h2>Estructura Semántica</h2>
+        <span class="goal-badge">HTML5 semántico</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Utilizar etiquetas semánticas para estructurar una página correctamente.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio8.html</code> y <code>estilo8.css</code>.</li>
+        <li><code>&lt;header&gt;</code> con <code>&lt;h1&gt;</code> que diga <strong>"Mi Blog"</strong>.</li>
+        <li><code>&lt;main&gt;</code> con un párrafo de contenido.</li>
+        <li><code>&lt;footer&gt;</code> con <code>&lt;p&gt;</code> <strong>"Copyright © 2025"</strong>.</li>
+        <li>CSS: dar un color de fondo diferente a cada sección semántica.</li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Ejercicio 9 -->
+  <article class="card" id="ej9">
+    <div class="card-header">
+      <div class="exercise-number">9</div>
+      <div class="card-header-text">
+        <h2>Menú de Navegación Estilizado</h2>
+        <span class="goal-badge">Navbar horizontal</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective">🎯 <strong>Objetivo:</strong> Estilizar una lista como menú de navegación horizontal.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>ejercicio9.html</code> y <code>estilo9.css</code>.</li>
+        <li>HTML: <code>&lt;nav&gt;</code> con <code>&lt;ul&gt;</code> y 4 <code>&lt;li&gt;</code>, cada uno con un <code>&lt;a&gt;</code>.</li>
+        <li>CSS — quitar viñetas y padding del <code>&lt;ul&gt;</code>.</li>
+        <li>CSS — <code>&lt;li&gt;</code>: <span class="css-chip">display: inline-block</span>.</li>
+        <li>CSS — <code>&lt;a&gt;</code>: <span class="css-chip">text-decoration: none</span> + <span class="css-chip">padding</span> + <span class="css-chip">background-color</span>.</li>
+      </ul>
+      <div class="optional">
+        <div class="optional-label">✨ Extra Opcional</div>
+        <p>Añade efecto <code>:hover</code> en los enlaces del menú.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Ejercicio 10 -->
+  <article class="card card-final" id="ej10">
+    <div class="card-header">
+      <div class="exercise-number">🏆</div>
+      <div class="card-header-text">
+        <h2>Proyecto Final – Mini Página Biográfica</h2>
+        <span class="goal-badge" style="color:var(--accent)">Consolidar todos los conocimientos</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="objective" style="border-left-color:var(--purple)">🎯 <strong>Objetivo:</strong> Consolidar todos los conocimientos de HTML y CSS en una sola página completa y bien estilizada.</div>
+      <p class="req-title">📋 Requisitos</p>
+      <ul class="req-list">
+        <li>Crear <code>biografia.html</code> y <code>estilo-bio.css</code>.</li>
+        <li><code>&lt;header&gt;</code> con tu nombre en <code>&lt;h1&gt;</code>.</li>
+        <li><code>&lt;main&gt;</code> con una <code>&lt;section&gt;</code> <strong>"Sobre Mí"</strong> (foto incluida) y otra <code>&lt;section&gt;</code> <strong>"Mis Hobbies"</strong> (lista <code>&lt;ul&gt;</code>).</li>
+        <li><code>&lt;footer&gt;</code> con tus redes sociales (enlaces de texto).</li>
+        <li>Usa CSS para estilizar toda la página: colores, fuentes, márgenes y clases.</li>
+      </ul>
+      <div class="optional" style="background:rgba(88,166,255,.06);border-color:rgba(88,166,255,.25)">
+        <div class="optional-label" style="color:var(--accent)">🌟 ¡Sé Creativo!</div>
+        <p>Este es tu proyecto final. Demuestra todo lo que aprendiste y dale tu toque personal. ¡No hay límites!</p>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  <p>Curso de Programación Básica · <strong>Módulo 2: HTML &amp; CSS</strong> · &copy; 2026</p>
+  <p style="margin-top:6px;font-size:.78rem">Instructor: Daniel Espitia</p>
+</footer>
+
+</body>
+</html>

@@ -6,6 +6,7 @@ int main() { // cout = print
     std::cout << "¡Hola, mundo!" << std::endl;
 
     std::string nombre;
+    
     std::cout << "Introduce tu nombre: ";
     std::cin >> nombre;
 

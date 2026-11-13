@@ -244,7 +244,7 @@ WHERE country = 'Mexico';
 
 -- Clientes que tienen más de 30 años.
 SELECT * FROM Customers 
-WHERE age > 30;
+WHERE age >Z 30;
 
 -- Pedidos con una cantidad de items mayor o igual a 2.
 SELECT * FROM Orders

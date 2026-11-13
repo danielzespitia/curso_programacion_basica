@@ -6,7 +6,7 @@ Estas etiquetas permiten enriquecer la página web con imágenes, audio, video y
 
 ## 1. `<img>`
 
-**Descripción:**  
+**Descripción:**
 Inserta una imagen en el documento. Es una etiqueta vacía (no tiene cierre).
 
 **Atributos Esenciales:**
@@ -32,7 +32,7 @@ Inserta una imagen en el documento. Es una etiqueta vacía (no tiene cierre).
 
 ## 2. `<figure>` y `<figcaption>`
 
-**Descripción:**  
+**Descripción:**
 `<figure>` especifica contenido autónomo, como ilustraciones, diagramas, fotos o listados de código.
 `<figcaption>` define un título o leyenda para el contenido de `<figure>`.
 
@@ -49,7 +49,7 @@ Inserta una imagen en el documento. Es una etiqueta vacía (no tiene cierre).
 
 ## 3. `<audio>`
 
-**Descripción:**  
+**Descripción:**
 Se usa para incrustar contenido de sonido.
 
 **Atributos:**
@@ -72,7 +72,7 @@ Se usa para incrustar contenido de sonido.
 
 ## 4. `<video>`
 
-**Descripción:**  
+**Descripción:**
 Se usa para incrustar contenido de video.
 
 **Atributos:**
@@ -94,7 +94,7 @@ Se usa para incrustar contenido de video.
 
 ## 5. `<source>`
 
-**Descripción:**  
+**Descripción:**
 Especifica recursos multimedia múltiples para elementos `<video>`, `<audio>` y `<picture>`. El navegador elegirá el primer formato que soporte.
 
 **Ejemplo:**
@@ -104,7 +104,7 @@ Especifica recursos multimedia múltiples para elementos `<video>`, `<audio>` y 
 
 ## 6. `<track>`
 
-**Descripción:**  
+**Descripción:**
 Especifica pistas de texto para elementos multimedia (`<audio>` y `<video>`), como subtítulos.
 
 **Atributos:**
@@ -131,7 +131,7 @@ Especifica pistas de texto para elementos multimedia (`<audio>` y `<video>`), co
 
 ## 7. `<iframe>`
 
-**Descripción:**  
+**Descripción:**
 Marco en línea (Inline Frame). Se usa para incrustar otra página web dentro de la actual (ej. mapas de Google, videos de YouTube).
 
 **Atributos:**
@@ -154,7 +154,7 @@ Marco en línea (Inline Frame). Se usa para incrustar otra página web dentro de
 
 ## 8. `<picture>`
 
-**Descripción:**  
+**Descripción:**
 Permite especificar múltiples fuentes de imagen para diferentes situaciones (ej. diferentes tamaños de pantalla o formatos de imagen como WebP). Da más control que `<img>` solo.
 
 **Ejemplo:**
@@ -171,7 +171,7 @@ Permite especificar múltiples fuentes de imagen para diferentes situaciones (ej
 
 ## 9. `<canvas>`
 
-**Descripción:**  
+**Descripción:**
 Contenedor para gráficos dibujados sobre la marcha mediante scripts (generalmente JavaScript). Se usa para juegos, visualización de datos, etc.
 
 **Ejemplo:**
@@ -190,7 +190,7 @@ Contenedor para gráficos dibujados sobre la marcha mediante scripts (generalmen
 
 ## 10. `<svg>` (Scalable Vector Graphics)
 
-**Descripción:**  
+**Descripción:**
 Define gráficos vectoriales en formato XML directamente en el HTML. Los gráficos SVG no pierden calidad al hacer zoom.
 
 **Ejemplo:**
