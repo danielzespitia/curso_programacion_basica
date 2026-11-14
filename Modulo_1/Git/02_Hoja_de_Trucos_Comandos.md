@@ -6,7 +6,7 @@ Configura tu identidad para que los commits lleven tu nombre.
 
 ```bash
 git config --global user.name "danielzespitia"
-git config --global user.email "Correo"
+git config --global user.email "daniel.z.espitia@gmail.com"
 ```
 
 ## 2. Iniciar un Proyecto

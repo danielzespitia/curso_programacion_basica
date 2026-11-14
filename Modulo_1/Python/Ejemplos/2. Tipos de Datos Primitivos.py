@@ -21,6 +21,7 @@ print(nombre) # Imprime: Ana
 # Métodos de cadenas de texto (strings) y f-strings
 
 saludo = "hola mundo"
+
 print(saludo.upper()) # Imprime: HOLA MUNDO
 print(saludo.capitalize()) # Imprime: Hola mundo
 print(saludo.replace("mundo", "Python")) # Imprime: hola Python
